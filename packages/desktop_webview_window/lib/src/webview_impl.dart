@@ -170,6 +170,17 @@ class WebviewImpl extends Webview {
   }
 
   @override
+  Future<void> setApplicationUserAgent(String userAgent) async {
+    if (!(Platform.isWindows || Platform.isLinux || Platform.isMacOS)) {
+      return;
+    }
+    await channel.invokeMethod("setApplicationUserAgent", {
+      "viewId": viewId,
+      "userAgent": userAgent,
+    });
+  }
+
+  @override
   Future<void> forward() {
     return channel.invokeMethod("forward", {"viewId": viewId});
   }

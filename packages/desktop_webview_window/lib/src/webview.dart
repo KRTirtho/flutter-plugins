@@ -47,6 +47,8 @@ abstract class Webview {
 
   /// Append a string to the webview's user-agent.
   Future<void> setApplicationNameForUserAgent(String applicationName);
+  /// Append a string to the webview's user-agent.
+  Future<void> setApplicationUserAgent(String userAgent);
 
   /// Navigate to the previous page in the history.
   Future<void> back();

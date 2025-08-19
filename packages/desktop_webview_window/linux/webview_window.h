@@ -39,6 +39,7 @@ class WebviewWindow {
   void Close();
 
   void SetApplicationNameForUserAgent(const std::string &app_name);
+  void SetApplicationUserAgent(const std::string &user_agent);
 
   void OnLoadChanged(WebKitLoadEvent load_event);
 
@@ -56,6 +57,8 @@ class WebviewWindow {
                         WebKitPolicyDecisionType type);
 
   void EvaluateJavaScript(const char *java_script, FlMethodCall *call);
+
+  void OpenDevToolsWindow();
 
  private:
   FlMethodChannel *method_channel_;

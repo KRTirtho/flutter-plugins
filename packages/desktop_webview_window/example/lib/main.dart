@@ -156,6 +156,7 @@ class _MyAppState extends State<MyApp> {
 
     webview
       ..setBrightness(Brightness.dark)
+      ..setApplicationUserAgent("LMAO")
       ..setApplicationNameForUserAgent(" WebviewExample/1.0.0")
       ..launch(_controller.text)
       ..setOnUrlRequestCallback((url) {
